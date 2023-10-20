@@ -1,6 +1,7 @@
 # DNS Blocklists for Unbound
 
 [![.github/workflows/ci.yml](https://github.com/mirosval/unbound-blocklist/actions/workflows/ci.yml/badge.svg)](https://github.com/mirosval/unbound-blocklist/actions/workflows/ci.yml)
+[![Update blocklist](https://github.com/mirosval/unbound-blocklist/actions/workflows/update.yml/badge.svg)](https://github.com/mirosval/unbound-blocklist/actions/workflows/update.yml)
 [![FlakeHub](https://img.shields.io/endpoint?url=https://flakehub.com/f/mirosval/unbound-blocklist/badge)](https://flakehub.com/flake/mirosval/unbound-blocklist)
 
 The amazing [StevenBlack](https://github.com/StevenBlack/hosts) repo has block lists for various domains that have been known to serve ads and other malicious content.

@@ -25,4 +25,4 @@ jobs:
           git config --global user.email 'mirosval@users.noreply.github.com'
           git commit -am "Update Blocklist to the latest version"
           git tag -a $(date +"v%Y.%-m.%-d") -m "Rolling version"
-          git push origin --tags
+          git push origin main --follow-tags
