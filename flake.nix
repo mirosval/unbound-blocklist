@@ -49,7 +49,7 @@
           };
 
           config = mkIf cfg.enable {
-            services.unbound.settings = {
+            services.unbound.settings.server = {
               include = "${pkg}/${confName}";
             };
           };
