@@ -32,7 +32,7 @@
             '';
           };
 
-        nixosModule = { config, lib, pkgs, ... }:
+        nixosModules.default = { config, lib, pkgs, ... }:
           with lib;
           let
             pkg = self.packages.${pkgs.system}.default;
