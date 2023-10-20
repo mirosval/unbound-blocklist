@@ -1,5 +1,7 @@
 # DNS Blocklists for Unbound
 
+[![FlakeHub](https://img.shields.io/endpoint?url=https://flakehub.com/f/mirosval/unbound-blocklist/badge)](https://flakehub.com/flake/mirosval/unbound-blocklist)
+
 The amazing [StevenBlack](https://github.com/StevenBlack/hosts) repo has block lists for various domains that have been known to serve ads and other malicious content.
 
 However the blocklist is in `/etc/hosts` format that looks like this:
