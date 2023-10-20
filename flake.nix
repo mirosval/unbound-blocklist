@@ -6,7 +6,7 @@
   };
   outputs = inputs@{ self, nixpkgs, flake-utils, ... }:
     let
-      confName = "blacklist.conf";
+      confName = "blocklist.conf";
     in
     flake-utils.lib.eachSystem flake-utils.lib.allSystems
       (system:
@@ -29,9 +29,9 @@
               sourceRoot = ".";
 
               installPhase = ''
-                cat source/hosts | awk '/^0\.0\.0\.0/ { if ( $2 !~ /0\.0\.0\.0/ ) { print "local-zone: \""$2".\" always_null" }}' > blacklist.conf
+                cat source/hosts | awk '/^0\.0\.0\.0/ { if ( $2 !~ /0\.0\.0\.0/ ) { print "local-zone: \""$2".\" always_null" }}' > blocklist.conf
                 mkdir -p $out
-                cp blacklist.conf $out/${confName}
+                cp blocklist.conf $out/${confName}
               '';
             };
         }
@@ -41,11 +41,11 @@
         with lib;
         let
           pkg = self.packages.${pkgs.system}.default;
-          cfg = config.services.unbound.blacklist;
+          cfg = config.services.unbound.blocklist;
         in
         {
-          options.services.unbound.blacklist = {
-            enable = mkEnableOption "Enables DNS blacklist generated from StevenBlack hosts file";
+          options.services.unbound.blocklist = {
+            enable = mkEnableOption "Enables DNS blocklist generated from StevenBlack hosts file";
           };
 
           config = mkIf cfg.enable {
