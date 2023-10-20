@@ -23,7 +23,7 @@
                   owner = "StevenBlack";
                   repo = "hosts";
                   rev = "master";
-                  hash = "sha256-fPMGNj1dXrbxJDxiC8U41NLz1vL5m3Ayw8uC1HJm4sU=";
+                  sha256 = "";
                 };
 
               sourceRoot = ".";
