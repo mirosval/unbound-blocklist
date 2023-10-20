@@ -1,0 +1,25 @@
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '7 5 * * 1' # every monday morning
+
+jobs:
+  update:
+    name: Update Flake
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+      - name: Update StevenBlack repo ref
+        run: |
+          nix flake update
+          nix run nixpkgs#update-nix-fetchgit flake.nix
+          nix build .
+      - name: Commit changes
+        run : |
+          git config --global user.name 'Update Bot'
+          git config --global user.email 'mirosval@users.noreply.github.com'
+          git commit -am "Update Blocklist to the latest version"
+          git tag -a $(date +"v%Y.%-m.%-d") -m "Rolling version"
+          git push origin --tags
