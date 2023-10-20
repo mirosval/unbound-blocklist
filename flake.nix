@@ -5,11 +5,13 @@
     flake-utils.url = github:numtide/flake-utils;
   };
   outputs = inputs@{ self, nixpkgs, flake-utils, ... }:
+    let
+      confName = "blacklist.conf";
+    in
     flake-utils.lib.eachSystem flake-utils.lib.allSystems
       (system:
         let
           pkgs = import nixpkgs { inherit system; };
-          confName = "blacklist.conf";
         in
         {
           packages.default = pkgs.stdenv.mkDerivation
