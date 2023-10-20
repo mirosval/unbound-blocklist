@@ -29,7 +29,7 @@
               sourceRoot = ".";
 
               installPhase = ''
-                grep '^0\.0\.0\.0' source/hosts | awk '{print "local-zone: \""$2".\" always_null"}' > blacklist.conf
+                cat source/hosts | awk '/^0\.0\.0\.0/ { if ( $2 !~ /0\.0\.0\.0/ ) { print "local-zone: \""$2".\" always_null" }}' > blacklist.conf
                 mkdir -p $out
                 cp blacklist.conf $out/${confName}
               '';
