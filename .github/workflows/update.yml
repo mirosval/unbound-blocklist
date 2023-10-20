@@ -15,10 +15,11 @@ jobs:
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@main
       - name: Update StevenBlack repo ref
-        run: |
-          nix flake update
-          nix run nixpkgs#update-nix-fetchgit flake.nix
-          nix build .
+        run: nix run nixpkgs#update-nix-fetchgit flake.nix
+      - name: Update flake deps
+        run: nix flake update
+      - name: Check that it still builds
+        run: nix build .
       - name: Commit changes
         run : |
           git config --global user.name 'Update Bot'
