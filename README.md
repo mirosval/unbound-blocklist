@@ -65,7 +65,7 @@ What it exactly does is it adds an `include` statement to the `server` block of 
 There are some ways this could be extended:
 
 - [ ] Add the other optional lists from StevenBlack (rn it's just the ads + malware)
-- [ ] Add CI so that the blocklists are automatically updated
+- [X] Add CI so that the blocklists are automatically updated
 
 ## Updating
 
