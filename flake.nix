@@ -1,10 +1,10 @@
 {
   description = "StevenBlack blocklist reformatted for Unbound";
   inputs = {
-    nixpkgs.url = github:nixos/nixpkgs;
-    flake-utils.url = github:numtide/flake-utils;
+    nixpkgs.url = "github:nixos/nixpkgs";
+    flake-utils.url = "github:numtide/flake-utils";
   };
-  outputs = inputs@{ self, nixpkgs, flake-utils, ... }:
+  outputs = { self, nixpkgs, flake-utils, ... }:
     let
       confName = "blocklist.conf";
     in
