@@ -17,13 +17,13 @@
           packages.default = pkgs.stdenv.mkDerivation
             {
               name = "stevenblack-unbound";
-              version = "unstable-2024-07-07";
+              version = "unstable-2024-07-14";
               src = pkgs.fetchFromGitHub
                 {
                   owner = "StevenBlack";
                   repo = "hosts";
-                  rev = "67448bdb863d266fd6031f1330c8958d84eba1a2";
-                  sha256 = "1avcra0h2mk15hpv83zxjfdvy7s5vdpvpnkdjnnhgmv1p7hfahfz";
+                  rev = "23a08642d7b1fb35e3d27ed5f2ceb7adbb9c9f94";
+                  sha256 = "1lrbng0a49qgfv377nqjdz36s0351skbnn2v4rk67dhlh67w6k22";
                 };
 
               sourceRoot = ".";
